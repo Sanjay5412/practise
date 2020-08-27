@@ -1,0 +1,62 @@
+<html><head>
+<script>
+    function dd(){
+        var s=document.getElementById("Ultra");
+        var p= s.options[s.selectedIndex].value;
+        document.getElementById("dem").innerHTML=p;
+    
+    }
+    function rad() {
+        var x = document.querySelector('[".myRadio"]:checked').value;
+        
+        document.getElementById("demo").textContent=x;
+}
+    function check(){
+        var z=document.getElementsByClassName("colorss");
+        var str=0;
+        for(var i=0;i<z.length;i++){
+            if(z[i].checked){
+                str+= Number(z[i].value);
+            
+            }
+        }
+        document.getElementById("ck").textContent=str;
+    }
+    function number(){
+        var n=Number(document.querySelector("#numb").value);
+       
+        document.getElementById("num").textContent=typeof(n);
+    }
+    </script></head>
+    <body>
+ <div id="rad">       
+<input type="radio" name="colors" value="1"class="myRadio">Red color
+<input type="radio" name="colors" value=0 class="myRadio">number 0
+<input type="radio" name="colors" value=2 class="myRadio">blue color
+        </div>
+
+
+
+<button onclick="rad()">Check value</button>
+
+<p id="demo"></p>
+<input type="checkbox" class="colorss" value="1" id="myRadioo">Red color
+<input type="checkbox" class="colorss" value="0"id="myRadioo">number 0
+<input type="checkbox" class="colorss" value="2" id="myRadioo">blue color
+<input type="button" onclick="check()"; return false; value=test>
+<p id="ck" ></p>
+<select id="Ultra" onchange="dd()"> 
+ <option value="0" >Select</option>
+ <option value="8">text1</option>
+ <option value="5">text2</option>
+ <option value="4">text3</option>
+</select>
+    
+    <input type="button" onclick="dd()" value=test>
+    <p id="dem"></p>
+<input type="number" id="numb" min=0 max=10>enter numbers from 1-10
+        <button onclick="number()">TEST</button>
+<p id="num"></p>
+
+    </body>
+</html>
